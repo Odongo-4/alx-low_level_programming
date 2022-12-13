@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <time.h>
-#include <stdlib>
+#include <stdlib.h>
 /**
  * main = asks for an integer random n
  * Return: 0, if exit correctly, non-zero if otherwise
