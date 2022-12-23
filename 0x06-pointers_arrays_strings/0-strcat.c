@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -7,7 +6,6 @@
  *    * @src: second string
  *     * Return: pointer to designated string
  */
-
 char *_strcat(char *dest, char *src)
 {
 int length, j;
