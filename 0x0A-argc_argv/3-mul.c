@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-int n, m, mult;
+int n, m, diff;
 if (argc != 3)
 {
 printf("Error\n");
@@ -20,7 +20,7 @@ n = atoi(argv[1]);
  *and is stored in stdli.h header file
  */
 m = atoi(argv[2]);
-mult = n *m;
+diff = n *m;
 printf("%d\n", diff);
 return (0);
 }
