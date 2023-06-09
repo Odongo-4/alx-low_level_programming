@@ -1,27 +1,19 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - Creates a hash table.
- * @size: The size of the array.
+ * hash_djb2 - Hash function implementing the djb2 algorithm.
+ * @str: The string to hash.
  *
- * Return: If an error occurs - NULL.
- *         Otherwise - a pointer to the new hash table.
+ * Return: The calculated hash.
  */
-hash_table_t *hash_table_create(unsigned long int size)
+unsigned long int hash_djb2(const unsigned char *str)
 {
-	hash_table_t *t;
-	unsigned long int j;
+	unsigned long int hash;
+	int c;
 
-	t = malloc(sizeof(hash_table_t));
-	if (t == NULL)
-		return (NULL);
+	hash = 5381;
+	while ((c = *str++))
+		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
 
-	t->size = size;
-	t->array = malloc(sizeof(hash_node_t *) * size);
-	if (t->array == NULL)
-		return (NULL);
-	for (j = 0; j < size; j++)
-		t->array[j] = NULL;
-
-	return (t);
+	return (hash);
 }
